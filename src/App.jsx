@@ -47,8 +47,8 @@ function App() {
     Email: '',
     Password: ''
   });
-  const [snackbarOpen, setSnackbarOpen] = useState(false); // Snackbar para registro exitoso
-  const [loginSnackbarOpen, setLoginSnackbarOpen] = useState(false); // Snackbar para error de inicio de sesión
+  const [snackbarOpen, setSnackbarOpen] = useState(false);
+  const [loginSnackbarOpen, setLoginSnackbarOpen] = useState(false); 
 
   useEffect(() => {
     const token = localStorage.getItem('TokenAdministracion');
@@ -62,7 +62,7 @@ function App() {
   const fetchUserData = async (token) => {
     try {
       const bearer = 'Bearer ' + token;
-      const response = await axios.get('https://backend-administracion-tesis-c9dxadg0cjfmcxg0.canadacentral-01.azurewebsites.net/DevolverTodosLosUsuarios', {
+      const response = await axios.get('https://tesis-backend-administracion.azurewebsites.net/DevolverTodosLosUsuarios', {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': bearer
@@ -96,7 +96,7 @@ function App() {
     try {
       if (email === 'admin@admin.com' && password === 'Puntero*5') {
         const response = await axios.post(
-          'https://backend-inventario-tesis-afc6h7hme8d6bma8.canadacentral-01.azurewebsites.net/api/Usuario/login',
+          'https://despliegue-backend-inventario.azurewebsites.net/api/Usuario/login',
           { email, password }
         );
         setIsLoggedIn(true);
@@ -160,7 +160,7 @@ function App() {
   };
 
   const handleRegister = () => {
-    axios.post('https://backend-inventario-tesis-afc6h7hme8d6bma8.canadacentral-01.azurewebsites.net/api/usuario/registrar', newUser)
+    axios.post('https://despliegue-backend-inventario.azurewebsites.net/api/usuario/registrar', newUser)
       .then(response => {
         console.log('Usuario registrado', response);
         setSnackbarOpen(true); // Mostrar Snackbar cuando el registro sea exitoso
