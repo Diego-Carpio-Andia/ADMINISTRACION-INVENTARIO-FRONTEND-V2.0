@@ -1,0 +1,30 @@
+/* Personalización para navegadores webkit (Chrome, Safari, Edge, Opera) */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento vertical */
+  height: 12px; /* Ancho de la barra de desplazamiento horizontal */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color de fondo de la pista de desplazamiento */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color de la barra de desplazamiento */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color de la barra de desplazamiento al pasar el ratón */
+}
+
+/* Para navegadores Firefox */
+html {
+  scrollbar-width: thin; /* Grosor de la barra de desplazamiento */
+  scrollbar-color: #888 #f1f1f1; /* Color de la barra de desplazamiento y la pista */
+}
+
+/* Para Internet Explorer y Edge heredado */
+body {
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+}
